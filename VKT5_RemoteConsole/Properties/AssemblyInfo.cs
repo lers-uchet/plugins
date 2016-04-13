@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Lers.Plugins;
@@ -7,7 +7,7 @@ using Lers.Plugins;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Удалённый пульт ВКТ-5")]
-[assembly: AssemblyDescription("Внешний модуль ЛЭРС УЧЕТ для удалённого управления теплосчётчиками ВКТ-5")]
+[assembly: AssemblyDescription("Консоль удалённого управления теплосчётчиками ВКТ-5")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ООО \"Хабаровский центр энергоресурсосбережения\" (www.lers.ru)")]
 [assembly: AssemblyProduct("Система диспетчеризации ЛЭРС УЧЕТ")]
@@ -31,6 +31,6 @@ using Lers.Plugins;
 // Т.к. мы можем забыть это сделать, то лучше чтобы версия увеличивалась сама. Звездочку можно задать только для версии сборки,
 // для версии файла она не работает. Но если не указать версию файла, то она будет равна версии сборки.
 
-[assembly: AssemblyVersion("1.1.*")]
+[assembly: AssemblyVersion("3.17.13")]
 //[assembly: AssemblyFileVersion("1.0.0.0")]
 
