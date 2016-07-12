@@ -43,10 +43,8 @@ namespace Vkt5_RemoteConsole
 			this.RemoteConsole.Disconnected += new EventHandler(RemoteConsole_Disconnected);
 
 			int networkAddress = 0;
-			if (parameters.Device.PollSettings.Network != null)
-			{
-				Int32.TryParse(parameters.Device.NetworkAddress, out networkAddress);
-			}
+
+			Int32.TryParse(parameters.Device.NetworkAddress, out networkAddress);
 
 			// Инициализируем контрол с удалённым пультом
 			this.vktConsoleControl.Initialize(this.RemoteConsole, networkAddress);
