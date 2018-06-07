@@ -40,12 +40,14 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lers.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e7c6d6299713498c, processorArchitecture=MSIL" />
     <Reference Include="Lers.Plugins.Attributes">
       <Private>False</Private>
     </Reference>
     <Reference Include="Lers.Plugins">
       <Private>False</Private>
     </Reference>
+    <Reference Include="Lers.Serialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e7c6d6299713498c, processorArchitecture=MSIL" />
     <Reference Include="Lers.System">
       <Private>False</Private>
     </Reference>
