@@ -1,13 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using Lers.Core;
 using Lers.Plugins;
 using Lers.UI;
-using Lers.Poll;
-using Lers.Utils;
-using Lers.Interop;
-using System.Collections.Generic;
 using Lers.UI.Tabs;
-using Lers.Core;
 
 namespace Vkt5_RemoteConsole
 {
@@ -83,7 +79,6 @@ namespace Vkt5_RemoteConsole
 			}
 		}
 
-
 		/// <summary>
 		/// Проверяет, что в выбранной точке учёта указана модель,
 		/// которая поддерживается удалённым пультом
@@ -154,7 +149,6 @@ namespace Vkt5_RemoteConsole
 
 			return null;
 		}
-
 
 		/// <summary>
 		/// Закрыто окно удалённого пульта. Удаляем его из списка открытых окон.
