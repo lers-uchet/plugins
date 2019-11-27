@@ -337,10 +337,11 @@ namespace Vkt5_RemoteConsole
 
 			string showLine = this.displayLine;
 
-			if (this.displayCursor)
+			if (showLine.Length > 0 && cursorPos < showLine.Length && this.displayCursor)
 			{
-				showLine = showLine.Remove(this.cursorPos, 1);
-				showLine = showLine.Insert(this.cursorPos, cursorChar);
+				showLine = showLine
+					.Remove(this.cursorPos, 1)
+					.Insert(this.cursorPos, cursorChar);
 			}
 
 			this.txtLine1.Text = showLine.Substring(0, 16);
