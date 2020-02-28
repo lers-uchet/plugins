@@ -154,35 +154,27 @@ namespace Vkt5_RemoteConsole
 		/// <param name="request"></param>
 		/// <param name="responseLength"></param>
 		/// <param name="readHandler"></param>
-		private void SendRequest(byte[] request, int responseLength, VktDataReadEventHandler readHandler)
+		private async void SendRequest(byte[] request, int responseLength, VktDataReadEventHandler readHandler)
 		{
-			CommandSettings cmd = new CommandSettings("", 1000, responseLength, 10);
+			var cmd = new CommandSettings("", 1000, responseLength, 10);
 
 			this.handlers.AddLast(readHandler);
 
 			this.responseLength = responseLength;
 
-			this.remoteConsole.SendCommandAsync(request, cmd, 0, DataReadCallback, null);
-		}
-
-		private void DataReadCallback(Lers.AsyncOperation asyncOp)
-		{
 			try
 			{
-				// Завершаем операцию чтения данных
-				Lers.Networking.ExecuteRequestAsyncOperation execRequestAsyncOp
-					= (Lers.Networking.ExecuteRequestAsyncOperation)asyncOp;
-
-				execRequestAsyncOp.EndExecuteRequest();
+				await remoteConsole.SendCommandAsync(request, cmd, 0);
 			}
 			catch (Exception e)
 			{
 				// При ошибке отправки данных отключаемся от устройства
 				LogError("Ошибка чтения данных. " + e.Message);
 			}
+			
 		}
 
-		private void remoteConsole_DeviceDataReceived(object sender, DeviceDataEventArgs args)
+		private async void remoteConsole_DeviceDataReceived(object sender, DeviceDataEventArgs args)
 		{
 			// Проверим, что консоль подключена к прибору
 			if (!this.remoteConsole.IsConnected)
@@ -205,7 +197,7 @@ namespace Vkt5_RemoteConsole
 				// Отключаемся
 				try
 				{
-					this.remoteConsole.DisconnectAsync(null, null);
+					await remoteConsole.DisconnectAsync();
 				}
 				catch (Lers.PermissionDeniedException exc)
 				{
