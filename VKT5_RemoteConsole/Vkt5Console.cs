@@ -199,7 +199,7 @@ namespace Vkt5_RemoteConsole
 				{
 					await remoteConsole.DisconnectAsync();
 				}
-				catch (Lers.PermissionDeniedException exc)
+				catch (LersException exc)
 				{
 					LogError("Ошибка отключения удалённого пульта. " + exc.Message);
 				}
