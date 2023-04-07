@@ -6,7 +6,7 @@
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Lers.Plugins" Version="3.37.0" />
+    <PackageReference Include="Lers.Plugins" Version="3.51.1" />
     <PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
   </ItemGroup>
 </Project>
